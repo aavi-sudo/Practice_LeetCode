@@ -48,7 +48,32 @@ false
 4. If any mismatch is found, return `false`.
 5. If the loop completes without mismatches, return `true`.
 
-### Code Implementation (C++)
+### Code Implementation (C++) (basic approach)
+```cpp
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        string y = to_string(x);
+        int j = y.length() - 1;
+        for(int i = 0; i < (y.length())/2; i++) {
+            if(y[i] != y[j]) {
+                return false;
+            }
+            j--;
+        }
+        return true;
+    }
+};
+```
+
+### Complexity Analysis
+- **Time Complexity:** `O(n)`, where `n` is the number of digits in `x`.
+- **Space Complexity:** `O(n)`, due to string conversion and storage.
+
+
+
+
+### Code Implementation (C++) (optimized approach)
 ```cpp
 class Solution {
 public:
